@@ -4,7 +4,7 @@ const { Pool } = require('pg');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT; // берем данные из .env для настройки бд. тут хранится порт(он нам еще понадобится)
+const PORT = process.env.PORT || 3000;
 
 // здесь берем данные из .env для подключения к бд
 const pool = new Pool({
@@ -15,23 +15,49 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD,
 });
 
-app.use(express.static(__dirname));
-
-
-
-// тестовый вывод данных 
-app.get('/api/data', async (req, res) => {
-    try {
-        const result = await pool.query('SELECT * FROM users LIMIT 50');
-        
-        res.json(result.rows);
-    } catch (error) {
-        res.status(500).json({ error: 'Ошибка' });
+pool.connect((err, client, release) => {
+    if (err) {
+        console.error('не подключено заибал, :', err.message);
+    } else {
+        console.log('подключено заибал');
+        release();
     }
 });
 
+app.use(express.static(__dirname));
+
+// app.get('/api/owner', async (req, res) => {
+//     const result = await pool.query('select * from owner');
+//     console.log('данные: ', result.rows);
+//     res.json(result.rows);
+// });
+
+
+app.get('/api/booking', async (req, res) => {
+    const result = await pool.query(`
+        select
+	    room_id as id,
+	    size as размер,
+	    room_num  as номер,
+	    tarif.class  as тариф,
+	    tarif.price  as цена,
+	    room_types.name as тип_комнаты,
+	    room_types.intended as предназначен_для
+	    from rooms
+	    join tarif on rooms.tarif_id = tarif.tarif_id
+	    join room_types on rooms.room_type_id = room_types.room_type_id
+	    order by tarif.tarif_id asc
+
+        
+	`);
+
+    console.log('данные: ', result.rows);
+    res.json(result.rows);
+});
+
+
+
 app.listen(PORT, () => {
-    console.log('ну чета выводится')
-    console.log(`Сервер на http://localhost:${PORT}`);  
-    // здесь просто выводим в консоль, для того чтоб убедиться, что бд подключена
+    console.log('все робит')
+    console.log(`сервер запущен на http://localhost:${PORT}`);
 });

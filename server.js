@@ -24,7 +24,7 @@ pool.connect((err, client, release) => {
     }
 });
 
-app.use(express.static(__dirname));
+app.use(express.static('public'));
 
 // app.get('/api/owner', async (req, res) => {
 //     const result = await pool.query('select * from owner');
@@ -47,7 +47,6 @@ app.get('/api/booking', async (req, res) => {
 	    join tarif on rooms.tarif_id = tarif.tarif_id
 	    join room_types on rooms.room_type_id = room_types.room_type_id
 	    order by tarif.tarif_id asc
-
         
 	`);
 

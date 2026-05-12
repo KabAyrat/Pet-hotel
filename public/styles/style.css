@@ -103,6 +103,11 @@ header h1 {
     border-color: #fcd5d5;
     color: #c0392b;
 }
+#addPetForm{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
 
 /* Responsive */
 @media (max-width: 1000px) {

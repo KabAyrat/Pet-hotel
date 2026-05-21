@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -87,7 +87,6 @@ header h1 {
     border-bottom: none;
 }
 
-/* Loading and message styles */
 .booking-block p {
     background: white;
     padding: 2rem;
@@ -109,7 +108,6 @@ header h1 {
     margin: 20px;
 }
 
-/* Responsive */
 @media (max-width: 1000px) {
     .container {
         padding: 0 1rem;
@@ -128,4 +126,291 @@ header h1 {
         overflow-x: auto;
         white-space: nowrap;
     }
+} */
+
+/* Reset and base styles  */
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
 }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Links */
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul,
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+address {
+    font-style: normal;
+}
+
+/* Form */
+
+input,
+textarea,
+button,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button,
+input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+legend {
+    display: block;
+}
+
+input[type='file'] {
+    max-width: 100%;
+}
+
+
+body {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 14px;
+    background: #F5F2E9;
+}
+
+
+
+.wrapper {
+    max-width: 1440px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    margin: 0 auto;
+}
+
+.registration-block {
+
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    background: #F5F2E9;
+}
+
+.reregistration__photo {
+    width: 40%;
+    background: #91CA7F;
+}
+
+.registration__form {
+     width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+
+}
+
+.registration__body_form {
+    display: flex;
+    gap: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    padding: 10px 80px 10px 10px;
+    background: #D9EACA;
+    box-shadow: 0px 4px 13.3px rgba(0, 0, 0, 0.15);
+    border-radius: 22px;
+}
+
+button {
+    margin-top: 20px;
+    display: block;
+    padding: 15px 80px;
+    border-radius: 53px;
+    background-color: #8FC77D;
+    width: 100%;
+
+}
+
+.password {
+    width: 100%;
+}
+
+.registration__h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.registration__sign_in {
+    padding-top: 10px;
+    text-align: center;
+}
+
+/* ------------------------------profile---------------------------------------------*/
+header {}
+
+.header {
+    background: #C8DFBA;
+    height: 60px;
+    align-self: center;
+    line-height: 60px;
+    min-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.main__h1 {
+    padding-bottom: 20px;
+}
+
+.main__h2 {
+    padding-bottom: 20px;
+
+}
+
+.main__body {
+    border-radius: 20px;
+    background-color: #C8DFBA;
+    display: flex;
+}
+
+.header__logo {}
+
+.header__menu {
+    gap: 30px;
+    display: flex;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.main__main-part {
+    padding: 50px;
+
+}
+
+.header__main_page {}
+
+.header__contacts {}
+
+.header__faq {}
+
+.header__btn {}
+
+.btn {
+  
+
+}
+
+.main__main {}
+
+.main__menu {
+    border-radius: 20px 0px 0px 20px;
+    padding: 60px 50px 0px 50px;
+    background-color: #8FC77D;
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.nav__profile {}
+
+.nav__pet {}
+
+.nav__basket {}
+
+.nav__history {}
+
+
+
+.registration__body_form {}

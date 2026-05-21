@@ -49,11 +49,9 @@ app.get('/api/booking', async (req, res) => {
 	    order by tarif.tarif_id asc
         
 	`);
-
     console.log('данные: ', result.rows);
     res.json(result.rows);
 });
-
 
 
 app.listen(PORT, () => {

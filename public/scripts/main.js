@@ -8,8 +8,7 @@ fetch('/api/booking')
             return;
         }
 
-        let html = `
-            <table class="data-table">
+        let html = `<table class="data-table">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -21,12 +20,10 @@ fetch('/api/booking')
                         <th>принадлежит</th>
                     </tr>
                 </thead>
-                <tbody>
-        `;
+                <tbody>`;
 
         data.forEach(booking => {
-            html += `
-                <tr>
+            html += `<tr>
                     <td>${booking.id}</td>
                     <td>${booking.размер}</td>
                     <td>${booking.номер}</td>
@@ -34,8 +31,7 @@ fetch('/api/booking')
                     <td>${booking.цена}</td>
                     <td>${booking.тип_комнаты}</td>
                     <td>${booking.предназначен_для}</td>
-                </tr>
-            `;
+                </tr>`;
         });
 
         html += `
